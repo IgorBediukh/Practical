@@ -1,25 +1,22 @@
 if ARGV.length != 1
-    puts "Використання: ruby game.rb [камінь|ножиці|папір] [камінь|ножиці|папір]"
+    puts "Usage: ruby game.rb [stone|scissors|paper]"
     exit(1)
   end
-  
-  # Можливі варіанти вибору
-  choices = ["камінь", "ножиці", "папір"]
-  
-  # Отримання вибору гравця та комп'ютера
+
+  choices = ["stone", "scissors", "paper"]
   player_choice = ARGV[0].downcase
   computer_choice = choices.sample
   
-  puts "Гравець вибрав: #{player_choice.capitalize}"
-  puts "Комп'ютер вибрав: #{computer_choice.capitalize}"
+  puts "Player chose: #{player_choice.capitalize}"
+  puts "Computer chose: #{computer_choice.capitalize}"
   
-  # Логіка гри та визначення переможця
   if player_choice == computer_choice
-    puts "Нічия!"
-  elsif (player_choice == "камінь" && computer_choice == "ножиці") ||
-        (player_choice == "ножиці" && computer_choice == "папір") ||
-        (player_choice == "папір" && computer_choice == "камінь")
-    puts "Ви виграли!"
+    puts "It's a tie!"
+  elsif (player_choice == "stone" && computer_choice == "scissors") ||
+        (player_choice == "scissors" && computer_choice == "paper") ||
+        (player_choice == "paper" && computer_choice == "stone")
+    puts "You win!"
   else
-    puts "Ви програли!"
+    puts "You lose!"
   end
+  
